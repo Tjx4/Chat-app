@@ -9,6 +9,7 @@ import UIKit
         
         backgroundColor = hexStringToUIColor(hex: "#f4f4f6")
         updateCornerRadius()
+        setBorder()
     }
 
     @IBInspectable var rounded: Bool = false {
@@ -22,24 +23,24 @@ import UIKit
     }
     
     
-    /*
-    override func layoutSubviews() {
-         super.layoutSubviews()
-        setLeftPaddingPoints(10)
-        setRightPaddingPoints(10)
+    func setBorder() {
+        layer.borderWidth = 2
+        layer.borderColor = hexStringToUIColor(hex:"#f4f4f6").cgColor
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+         return CGRect(
+             x: bounds.origin.x + 15,
+             y: bounds.origin.y + 15,
+             width: bounds.size.width - 15 * 2,
+             height: bounds.size.height - 15 * 2
+         )
      }
 
+     override func editingRect(forBounds bounds: CGRect) -> CGRect {
+         return self.textRect(forBounds: bounds)
+     }
     
-    func setLeftPaddingPoints(_ amount:CGFloat){
-          let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-          self.leftView = paddingView
-          self.leftViewMode = .always
-      }
-      func setRightPaddingPoints(_ amount:CGFloat) {
-          let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-          self.rightView = paddingView
-          self.rightViewMode = .always
-      }
-    */
+    
     
 }
