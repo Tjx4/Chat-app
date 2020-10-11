@@ -81,38 +81,6 @@
             <point key="canvasLocation" x="139" y="130"/>
         </scene>
         <!--Friends-->
-        <scene sceneID="CNs-2e-RVr">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H2f-L7-Epa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tableViewController id="JxO-9k-0jq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zK8-H0-KdN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="YX5-ge-MDc">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YX5-ge-MDc" id="ncr-fx-lXe">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="JxO-9k-0jq" id="osd-I2-4bV"/>
-                            <outlet property="delegate" destination="JxO-9k-0jq" id="gNL-Mh-OX4"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Friends" id="1Yz-yj-BnG"/>
-                    <connections>
-                        <outlet property="friendsTableView" destination="zK8-H0-KdN" id="Uns-pS-tH6"/>
-                    </connections>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="1917" y="-540"/>
-        </scene>
-        <!--Friends-->
         <scene sceneID="pFL-IS-0kv">
             <objects>
                 <viewController id="Y2e-2b-HeC" customClass="FriendsViewController" customModule="Chat_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2rr-Uh-Cr1">
-                                <rect key="frame" x="0.0" y="-27" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -134,10 +102,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="JxO-9k-0jq" id="roE-Mt-ZzO"/>
-                                    <outlet property="delegate" destination="JxO-9k-0jq" id="3av-53-jX4"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -146,12 +110,12 @@
                     <navigationItem key="navigationItem" title="Friends" id="tas-Dl-xw2"/>
                     <connections>
                         <outlet property="myFriendsTableView" destination="2rr-Uh-Cr1" id="Lgh-jt-w9j"/>
-                        <segue destination="kYR-K5-EXA" kind="show" id="Atu-Py-V6g"/>
+                        <segue destination="kYR-K5-EXA" kind="show" identifier="detailsSegue" id="Atu-Py-V6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvJ-na-Has" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2080" y="130"/>
+            <point key="canvasLocation" x="2079.7101449275365" y="129.91071428571428"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5aQ-QS-hHj">

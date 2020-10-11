@@ -21,6 +21,7 @@ class FriendsViewController : UIViewController {
 extension FriendsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath: \(indexPath)")
+        segueToScreen(segueIdentifier: "detailsSegue")
     }
 }
 
