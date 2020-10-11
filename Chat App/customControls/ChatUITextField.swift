@@ -1,8 +1,28 @@
 
 import UIKit
 
-class ChatUITextField: UITextField {
+@IBDesignable class ChatUITextField: UITextField {
     
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        backgroundColor = hexStringToUIColor(hex: "#f4f4f6")
+        updateCornerRadius()
+    }
+
+    @IBInspectable var rounded: Bool = false {
+        didSet {
+            updateCornerRadius()
+        }
+    }
+
+    func updateCornerRadius() {
+        layer.cornerRadius = rounded ? 5 : 0
+    }
+    
+    
+    /*
     override func layoutSubviews() {
          super.layoutSubviews()
         setLeftPaddingPoints(10)
@@ -20,5 +40,6 @@ class ChatUITextField: UITextField {
           self.rightView = paddingView
           self.rightViewMode = .always
       }
+    */
     
 }

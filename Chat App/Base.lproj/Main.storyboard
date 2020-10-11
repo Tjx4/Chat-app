@@ -21,16 +21,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-DL-iKg">
-                                <rect key="frame" x="40" y="274" width="334" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-DL-iKg" customClass="ChatUITextField" customModule="Chat_App" customModuleProvider="target">
+                                <rect key="frame" x="40" y="254" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Klq-oG-W2P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-7P-jzU" customClass="UIRoundedGreenButton" customModule="Dice_game" customModuleProvider="target">
-                                <rect key="frame" x="40" y="364" width="334" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-7P-jzU" customClass="UIRoundedBlueButton" customModule="Chat_App" customModuleProvider="target">
+                                <rect key="frame" x="40" y="344" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="iSe-2i-4iJ"/>
                                 </constraints>
@@ -41,8 +41,11 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onLoginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDj-wX-15D"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-3t-U2q">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-3t-U2q" customClass="ChatUITextField" customModule="Chat_App" customModuleProvider="target">
                                 <rect key="frame" x="40" y="184" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="s4T-O6-cWc"/>
@@ -60,24 +63,29 @@
                             <constraint firstItem="IpT-DL-iKg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="InV-1X-O1q"/>
                             <constraint firstItem="z2u-7P-jzU" firstAttribute="top" secondItem="IpT-DL-iKg" secondAttribute="bottom" constant="40" id="WCo-0z-okE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fY6-3t-U2q" secondAttribute="trailing" constant="40" id="j5s-va-dVu"/>
-                            <constraint firstItem="IpT-DL-iKg" firstAttribute="top" secondItem="fY6-3t-U2q" secondAttribute="bottom" constant="40" id="lhB-br-eDs"/>
+                            <constraint firstItem="IpT-DL-iKg" firstAttribute="top" secondItem="fY6-3t-U2q" secondAttribute="bottom" constant="20" id="lhB-br-eDs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2u-7P-jzU" secondAttribute="trailing" constant="40" id="q71-se-V6F"/>
                             <constraint firstItem="fY6-3t-U2q" firstAttribute="top" secondItem="oGP-7m-Sh9" secondAttribute="bottom" constant="50" id="rHk-CO-ZID"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IpT-DL-iKg" secondAttribute="trailing" constant="40" id="xjG-22-cxd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordUiTextField" destination="IpT-DL-iKg" id="DMO-Ja-WsY"/>
+                        <outlet property="usernameUiTextField" destination="fY6-3t-U2q" id="tjX-nL-NoJ"/>
+                        <segue destination="UGv-jJ-vpk" kind="show" identifier="segueToFriends" id="Xkr-sR-K1E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="130"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Friends-->
         <scene sceneID="CNs-2e-RVr">
             <objects>
                 <tableViewController id="JxO-9k-0jq" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zK8-H0-KdN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -95,7 +103,7 @@
                             <outlet property="delegate" destination="JxO-9k-0jq" id="gNL-Mh-OX4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="1Yz-yj-BnG"/>
+                    <navigationItem key="navigationItem" title="Friends" id="1Yz-yj-BnG"/>
                     <connections>
                         <segue destination="kYR-K5-EXA" kind="show" id="3C2-Ra-2sB"/>
                     </connections>
@@ -109,7 +117,7 @@
             <objects>
                 <viewController id="kYR-K5-EXA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="imS-z4-UK4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="DPB-bS-mca"/>
@@ -124,8 +132,9 @@
         <scene sceneID="JUC-Tb-Y0B">
             <objects>
                 <navigationController id="UGv-jJ-vpk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KXl-vJ-akc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hqx-0a-Vos">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
