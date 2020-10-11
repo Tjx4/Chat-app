@@ -1,11 +1,11 @@
 import UIKit
 
-@IBDesignable class UIRoundedGreenButton: UIButton
+@IBDesignable class UIRoundedBlueButton: UIButton
 {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        backgroundColor = hexStringToUIColor(hex: "#008577")
+        backgroundColor = hexStringToUIColor(hex: "#0088cc")
         updateCornerRadius()
     }
 
