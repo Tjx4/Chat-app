@@ -83,9 +83,10 @@
         <!--Friends-->
         <scene sceneID="CNs-2e-RVr">
             <objects>
-                <tableViewController id="JxO-9k-0jq" customClass="FriendsTableViewController" customModule="Chat_App" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H2f-L7-Epa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="JxO-9k-0jq" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zK8-H0-KdN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -106,12 +107,51 @@
                     <navigationItem key="navigationItem" title="Friends" id="1Yz-yj-BnG"/>
                     <connections>
                         <outlet property="friendsTableView" destination="zK8-H0-KdN" id="Uns-pS-tH6"/>
-                        <segue destination="kYR-K5-EXA" kind="show" id="3C2-Ra-2sB"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H2f-L7-Epa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2003" y="130"/>
+            <point key="canvasLocation" x="1917" y="-540"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="pFL-IS-0kv">
+            <objects>
+                <viewController id="Y2e-2b-HeC" customClass="FriendsViewController" customModule="Chat_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mDl-PI-BLS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2rr-Uh-Cr1">
+                                <rect key="frame" x="0.0" y="-27" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="nSs-fH-5wg">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nSs-fH-5wg" id="Cvw-Cf-BRs">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JxO-9k-0jq" id="roE-Mt-ZzO"/>
+                                    <outlet property="delegate" destination="JxO-9k-0jq" id="3av-53-jX4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="khU-CW-SMb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Friends" id="tas-Dl-xw2"/>
+                    <connections>
+                        <outlet property="myFriendsTableView" destination="2rr-Uh-Cr1" id="Lgh-jt-w9j"/>
+                        <segue destination="kYR-K5-EXA" kind="show" id="Atu-Py-V6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rvJ-na-Has" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2080" y="130"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5aQ-QS-hHj">
@@ -139,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JxO-9k-0jq" kind="relationship" relationship="rootViewController" id="lSz-l6-hEE"/>
+                        <segue destination="Y2e-2b-HeC" kind="relationship" relationship="rootViewController" id="N0I-ZV-jcE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3g-GF-X9N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
