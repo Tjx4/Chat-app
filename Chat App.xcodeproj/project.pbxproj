@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC4DFF9B25336243008297E2 /* UIRoundedGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DFF9A25336243008297E2 /* UIRoundedGreenButton.swift */; };
+		FC4DFF9E253362BF008297E2 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DFF9D253362BF008297E2 /* ColorHelper.swift */; };
 		FC7A3A8D25318AD7003AA935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3A8C25318AD7003AA935 /* AppDelegate.swift */; };
 		FC7A3A8F25318AD7003AA935 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3A8E25318AD7003AA935 /* SceneDelegate.swift */; };
 		FC7A3A9125318AD7003AA935 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3A9025318AD7003AA935 /* ViewController.swift */; };
@@ -14,9 +16,12 @@
 		FC7A3A9625318AD8003AA935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7A3A9525318AD8003AA935 /* Assets.xcassets */; };
 		FC7A3A9925318AD8003AA935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC7A3A9725318AD8003AA935 /* LaunchScreen.storyboard */; };
 		FC7A3AA325318C6B003AA935 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3AA225318C6B003AA935 /* LoginViewController.swift */; };
+		FC7A3AA52531963E003AA935 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3AA42531963E003AA935 /* FriendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC4DFF9A25336243008297E2 /* UIRoundedGreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundedGreenButton.swift; sourceTree = "<group>"; };
+		FC4DFF9D253362BF008297E2 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		FC7A3A8925318AD7003AA935 /* Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7A3A8C25318AD7003AA935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC7A3A8E25318AD7003AA935 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		FC7A3A9825318AD8003AA935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC7A3A9A25318AD8003AA935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC7A3AA225318C6B003AA935 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FC7A3AA42531963E003AA935 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC4DFF982533621F008297E2 /* customControls */ = {
+			isa = PBXGroup;
+			children = (
+				FC4DFF9A25336243008297E2 /* UIRoundedGreenButton.swift */,
+			);
+			path = customControls;
+			sourceTree = "<group>";
+		};
+		FC4DFF9C25336293008297E2 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC4DFF9D253362BF008297E2 /* ColorHelper.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		FC7A3A8025318AD7003AA935 = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +80,9 @@
 		FC7A3A8B25318AD7003AA935 /* Chat App */ = {
 			isa = PBXGroup;
 			children = (
-				FC7A3AA025318C3E003AA935 /* New Group */,
+				FC4DFF9C25336293008297E2 /* helpers */,
+				FC4DFF982533621F008297E2 /* customControls */,
+				FC7A3AA025318C3E003AA935 /* features */,
 				FC7A3A8C25318AD7003AA935 /* AppDelegate.swift */,
 				FC7A3A8E25318AD7003AA935 /* SceneDelegate.swift */,
 				FC7A3A9025318AD7003AA935 /* ViewController.swift */,
@@ -70,12 +94,13 @@
 			path = "Chat App";
 			sourceTree = "<group>";
 		};
-		FC7A3AA025318C3E003AA935 /* New Group */ = {
+		FC7A3AA025318C3E003AA935 /* features */ = {
 			isa = PBXGroup;
 			children = (
+				FC7A3AA625319653003AA935 /* friends */,
 				FC7A3AA125318C45003AA935 /* login */,
 			);
-			path = "New Group";
+			path = features;
 			sourceTree = "<group>";
 		};
 		FC7A3AA125318C45003AA935 /* login */ = {
@@ -84,6 +109,14 @@
 				FC7A3AA225318C6B003AA935 /* LoginViewController.swift */,
 			);
 			path = login;
+			sourceTree = "<group>";
+		};
+		FC7A3AA625319653003AA935 /* friends */ = {
+			isa = PBXGroup;
+			children = (
+				FC7A3AA42531963E003AA935 /* FriendsViewController.swift */,
+			);
+			path = friends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7A3AA325318C6B003AA935 /* LoginViewController.swift in Sources */,
+				FC4DFF9B25336243008297E2 /* UIRoundedGreenButton.swift in Sources */,
+				FC7A3AA52531963E003AA935 /* FriendsViewController.swift in Sources */,
 				FC7A3A9125318AD7003AA935 /* ViewController.swift in Sources */,
 				FC7A3A8D25318AD7003AA935 /* AppDelegate.swift in Sources */,
+				FC4DFF9E253362BF008297E2 /* ColorHelper.swift in Sources */,
 				FC7A3A8F25318AD7003AA935 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

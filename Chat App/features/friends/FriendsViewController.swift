@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  FriendsViewController.swift
 //  Chat App
 //
 //  Created by Tshepo Mahlaula on 2020/10/10.
