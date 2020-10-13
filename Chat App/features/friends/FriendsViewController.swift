@@ -123,8 +123,10 @@ extension FriendsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let friendTableViewCell = tableView.dequeueReusableCell(withIdentifier: FriendTableViewCell.identifier, for: indexPath) as! FriendTableViewCell
-            
-            friendTableViewCell.config(with: friends?[indexPath.row].alias ?? "", imageUrl: friends?[indexPath.row].imageURL ?? "")
+        
+        let friend: Friend? = friends?[indexPath.row]
+        
+            friendTableViewCell.config(with: friend?.alias, imageUrl: friend?.imageURL, lastSeen: friend?.lastSeen, onLine: friend?.status)
             
              return friendTableViewCell
     }

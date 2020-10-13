@@ -4,17 +4,21 @@ import UIKit
 class FriendTableViewCell: UITableViewCell {
     
     static let identifier = "FriendTableViewCell"
-    @IBOutlet var  friendName:UILabel!
-    @IBOutlet var  friendProfpic:RoundedUIImageView!
+    @IBOutlet weak var lastSeenUILabel: UILabel!
+    @IBOutlet weak var onLineUILabel: UILabel!
+    @IBOutlet weak var friendUILabel: UILabel!
+    @IBOutlet weak var  friendProfpic: RoundedUIImageView!
     
     static func nib() -> UINib{
         return UINib(nibName: "FriendTableViewCell", bundle: nil)
     }
     
-    public func config(with name: String, imageUrl: String){
-        friendName.text = name
-        friendProfpic.loadImageFromUrl(imageUrl)
-        // friendProfpic.image = UIImage(contentsOfFile: "user_icon")
+    public func config(with name: String?, imageUrl: String?, lastSeen: String?, onLine: String?){
+        friendUILabel.text = name ?? ""
+        onLineUILabel.text = onLine ?? ""
+        friendProfpic.loadImageFromUrl(imageUrl ?? "")
+        var spl = lastSeen?.split(separator: " ")[1] ?? ""
+        lastSeenUILabel.text = "\(spl)"
     }
 
     override func awakeFromNib() {
