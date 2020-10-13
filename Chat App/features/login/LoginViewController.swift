@@ -1,24 +1,44 @@
 import UIKit
 
 class LoginViewController: UIViewController, CAAnimationDelegate {
-    
     @IBOutlet weak var usernameUiTextField: ChatUITextField!
     @IBOutlet weak var passwordUiTextField: ChatUITextField!
     @IBOutlet weak var errorUiLabel: UILabel!
     @IBOutlet weak var createAccountUILabel: UILabel!
     
+    
     var errorMessage: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        usernameUiTextField.delegate = self
+        passwordUiTextField.delegate = self
+    }
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameUiTextField {
+            textField.resignFirstResponder()
+            passwordUiTextField.becomeFirstResponder()
+        }
+        else if textField == passwordUiTextField {
+            textField.resignFirstResponder()
+        }
+        else{
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
+        return true
+    }
     
     @IBAction func onLoginClicked(_ sender: Any) {
          UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        
+
+        showLoading()
         checkAndLogin()
     }
     
     func checkAndLogin() {
         let usenrname: String = usernameUiTextField.text ?? ""
         let password: String = passwordUiTextField.text ?? ""
-        
         
         do{
             if !checkIsValidUsername(usenrname) {
@@ -34,6 +54,8 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
             }
       
             let logIn = try logInUser(usenrname, password)
+             
+            hideLoading()
       
             if logIn.result {
                 segueToScreen(segueIdentifier: "segueToFriends")
@@ -46,6 +68,8 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     }
     
     fileprivate func logInUser(_ username: String, _ password: String) throws -> Login {
+               let semaphore = DispatchSemaphore(value: 0)
+        
 /*
             let semaphore = DispatchSemaphore(value: 0)
             
@@ -97,6 +121,7 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
 */
         var login = Login()
         login.result = true
+        
         return login
     }
 
@@ -107,7 +132,24 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     func checkIsValidPassword(_ password: String?) -> Bool {
         return password?.isValidPassword() ?? false
     }
+    
+    let spinner: SpinnerViewController  = SpinnerViewController()
+      
+    fileprivate func showLoading() {
+       addChild(spinner)
+       spinner.view.frame = view.frame
+       view.addSubview(spinner.view)
+       spinner.didMove(toParent: self)
+    }
 
+    fileprivate func hideLoading() {
+       DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+          self.spinner.willMove(toParent: nil)
+          self.spinner.view.removeFromSuperview()
+          self.spinner.removeFromParent()
+       }
+    }
+      
 }
 
 

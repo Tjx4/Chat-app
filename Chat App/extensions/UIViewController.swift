@@ -16,5 +16,11 @@ extension UIViewController {
          segueToViewController(segueIdentifier: segueIdentifier)
      }
     
-    
+}
+
+extension UIViewController: UITextFieldDelegate{
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
 }
