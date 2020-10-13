@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Klq-oG-W2P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-7P-jzU" customClass="UIRoundedBlueButton" customModule="Chat_App" customModuleProvider="target">
                                 <rect key="frame" x="40" y="381" width="334" height="50"/>
