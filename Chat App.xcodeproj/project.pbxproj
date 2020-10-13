@@ -20,6 +20,9 @@
 		FC7A3A9925318AD8003AA935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC7A3A9725318AD8003AA935 /* LaunchScreen.storyboard */; };
 		FC7A3AA325318C6B003AA935 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3AA225318C6B003AA935 /* LoginViewController.swift */; };
 		FC7A3AA52531963E003AA935 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3AA42531963E003AA935 /* FriendsViewController.swift */; };
+		FC88ADBE2535995F0066B32A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADBD2535995F0066B32A /* Login.swift */; };
+		FC88ADC12535A24F0066B32A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC02535A24F0066B32A /* Constants.swift */; };
+		FC88ADC42535A5BA0066B32A /* Networerror.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC32535A5BA0066B32A /* Networerror.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		FC7A3A9A25318AD8003AA935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC7A3AA225318C6B003AA935 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FC7A3AA42531963E003AA935 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		FC88ADBD2535995F0066B32A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		FC88ADC02535A24F0066B32A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FC88ADC32535A5BA0066B32A /* Networerror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networerror.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 		FC7A3A8B25318AD7003AA935 /* Chat App */ = {
 			isa = PBXGroup;
 			children = (
+				FC88ADC22535A5A20066B32A /* enums */,
+				FC88ADBF2535A2320066B32A /* constants */,
+				FC88ADBC2535994C0066B32A /* models */,
 				FC4DFFA225336925008297E2 /* extensions */,
 				FC4DFF9C25336293008297E2 /* helpers */,
 				FC4DFF982533621F008297E2 /* customControls */,
@@ -134,6 +143,30 @@
 				FC7A3AA42531963E003AA935 /* FriendsViewController.swift */,
 			);
 			path = friends;
+			sourceTree = "<group>";
+		};
+		FC88ADBC2535994C0066B32A /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FC88ADBD2535995F0066B32A /* Login.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		FC88ADBF2535A2320066B32A /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				FC88ADC02535A24F0066B32A /* Constants.swift */,
+			);
+			path = constants;
+			sourceTree = "<group>";
+		};
+		FC88ADC22535A5A20066B32A /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				FC88ADC32535A5BA0066B32A /* Networerror.swift */,
+			);
+			path = enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +246,13 @@
 				FC7A3A9125318AD7003AA935 /* ViewController.swift in Sources */,
 				FC7A3A8D25318AD7003AA935 /* AppDelegate.swift in Sources */,
 				FC4DFF9E253362BF008297E2 /* ColorHelper.swift in Sources */,
+				FC88ADC42535A5BA0066B32A /* Networerror.swift in Sources */,
 				FC4DFFA8253383E0008297E2 /* NotificationHelper.swift in Sources */,
 				FC4DFFA6253376BE008297E2 /* UIRoundedBlueButton.swift in Sources */,
 				FC7A3A8F25318AD7003AA935 /* SceneDelegate.swift in Sources */,
+				FC88ADBE2535995F0066B32A /* Login.swift in Sources */,
 				FC4DFFA1253364C6008297E2 /* ChatUITextField.swift in Sources */,
+				FC88ADC12535A24F0066B32A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
