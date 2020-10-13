@@ -1,5 +1,4 @@
 
-
 struct Login: Codable {
     var result: Bool = false
     var guid: String? = nil

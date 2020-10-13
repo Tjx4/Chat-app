@@ -24,6 +24,8 @@
 		FC88ADC12535A24F0066B32A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC02535A24F0066B32A /* Constants.swift */; };
 		FC88ADC42535A5BA0066B32A /* Networerror.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC32535A5BA0066B32A /* Networerror.swift */; };
 		FC88ADC62535AFFD0066B32A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC52535AFFD0066B32A /* Friend.swift */; };
+		FC88ADC82535C1D50066B32A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC72535C1D50066B32A /* StringExtension.swift */; };
+		FC88ADCA2535CC560066B32A /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC92535CC560066B32A /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		FC88ADC02535A24F0066B32A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FC88ADC32535A5BA0066B32A /* Networerror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networerror.swift; sourceTree = "<group>"; };
 		FC88ADC52535AFFD0066B32A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		FC88ADC72535C1D50066B32A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		FC88ADC92535CC560066B32A /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				FC4DFFA325336935008297E2 /* UIViewController.swift */,
+				FC88ADC72535C1D50066B32A /* StringExtension.swift */,
+				FC88ADC92535CC560066B32A /* UIViewExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 			files = (
 				FC7A3AA325318C6B003AA935 /* LoginViewController.swift in Sources */,
 				FC88ADC62535AFFD0066B32A /* Friend.swift in Sources */,
+				FC88ADC82535C1D50066B32A /* StringExtension.swift in Sources */,
 				FC4DFFA425336935008297E2 /* UIViewController.swift in Sources */,
 				FC7A3AA52531963E003AA935 /* FriendsViewController.swift in Sources */,
 				FC7A3A9125318AD7003AA935 /* ViewController.swift in Sources */,
@@ -252,6 +259,7 @@
 				FC4DFF9E253362BF008297E2 /* ColorHelper.swift in Sources */,
 				FC88ADC42535A5BA0066B32A /* Networerror.swift in Sources */,
 				FC4DFFA8253383E0008297E2 /* NotificationHelper.swift in Sources */,
+				FC88ADCA2535CC560066B32A /* UIViewExtensions.swift in Sources */,
 				FC4DFFA6253376BE008297E2 /* UIRoundedBlueButton.swift in Sources */,
 				FC7A3A8F25318AD7003AA935 /* SceneDelegate.swift in Sources */,
 				FC88ADBE2535995F0066B32A /* Login.swift in Sources */,

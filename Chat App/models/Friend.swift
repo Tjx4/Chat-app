@@ -6,4 +6,5 @@ struct Friend: Codable {
     var dateOfBirth: String? = nil
     var imageURL: String? = nil
     var status: String? = nil
+    var lastSeen: String? = nil
 }

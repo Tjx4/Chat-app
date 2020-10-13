@@ -3,24 +3,36 @@ import UIKit
 class LoginViewController: UIViewController, CAAnimationDelegate {
     
     @IBOutlet weak var usernameUiTextField: ChatUITextField!
-    
     @IBOutlet weak var passwordUiTextField: ChatUITextField!
+    @IBOutlet weak var errorUiLabel: UILabel!
+    @IBOutlet weak var createAccountUILabel: UILabel!
+    
+    var errorMessage: String?
     
     @IBAction func onLoginClicked(_ sender: Any) {
         checkAndLogin()
     }
     
     func checkAndLogin() {
-        let logIn = Login()
-
         let usenrname: String = usernameUiTextField.text ?? ""
-        let password: String = passwordUiTextField.text ??  ""
+        let password: String = passwordUiTextField.text ?? ""
         
         do{
+            if !checkIsValidUsername(usenrname) {
+                errorUiLabel.text = "Please enter a valid username"
+                errorUiLabel.blink()
+                return
+            }
+        
+            if !checkIsValidPassword(password) {
+                errorUiLabel.text = "Please enter a valid password"
+                errorUiLabel.blink()
+                return
+            }
+      
             let logIn = try logInUser(usenrname, password)
-            let isSuccesful = logIn.isSuccesful
-            
-            if isSuccesful {
+      
+            if logIn.result {
                 segueToScreen(segueIdentifier: "segueToFriends")
             }
           
@@ -30,40 +42,68 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     }
     
     fileprivate func logInUser(_ username: String, _ password: String) throws -> Login {
-        let urlString = HOST+""+LOGIN_USER
-        print(urlString)
-                
-        guard let url = URL(string: urlString) else {
-            throw Networerror.url
-        }
-        
-        var data: Data?
-        var response: URLResponse?
-        var error: Error?
-        
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        URLSession.shared.dataTask(with: url) { (d, resp, err) in
-            data = d
-            response = resp
-            error = err
+/*
+            let semaphore = DispatchSemaphore(value: 0)
             
-            semaphore.signal()
-        }.resume()
+            let Url = String(format: HOST+""+LOGIN_USER)
+            print(Url)
+            
+            guard let serviceUrl = URL(string: Url) else { return Login() }
         
-       _ = semaphore.wait(timeout: .distantFuture)
+            let parameters: [String: Any] = [
+                "request": [
+                        "xusercode" : username,
+                        "xpassword": password
+                ]
+            ]
         
-        if let httpUrlResponse = response as? HTTPURLResponse, httpUrlResponse.statusCode > 200 {
-            throw Networerror.statusCode
+            var request = URLRequest(url: serviceUrl)
+            request.httpMethod = "POST"
+            request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        
+            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+                return JSONDecoder().decode(Login.self,
+                from: data!)
+            }
+        
+            request.httpBody = httpBody
+            request.timeoutInterval = 20
+            let session = URLSession.shared
+        
+            session.dataTask(with: request) { (data, response, error) in
+                if let response = response {
+                    print(response)
+                }
+                
+                if let data = data {
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data, options: [])
+                        print(json)
+                    } catch {
+                        print(error)
+                    }
+                }
+                
+                semaphore.signal()
+                
+            }.resume()
         }
-        
-        if error != nil{
-            throw Networerror.generic
-        }
-        
-        return try JSONDecoder().decode(Login.self,
-        from: data!)
+                
+      _ = semaphore.wait(timeout: .distantFuture)
+*/
+        var login = Login()
+        login.result = true
+        return login
     }
+
+    func checkIsValidUsername(_ username: String?) -> Bool {
+        return username?.isValidUsername() ?? false
+    }
+    
+    func checkIsValidPassword(_ password: String?) -> Bool {
+        return password?.isValidPassword() ?? false
+    }
+
 }
 
 
