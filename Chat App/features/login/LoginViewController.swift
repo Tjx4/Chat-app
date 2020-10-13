@@ -10,12 +10,15 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     var errorMessage: String?
     
     @IBAction func onLoginClicked(_ sender: Any) {
+         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        
         checkAndLogin()
     }
     
     func checkAndLogin() {
         let usenrname: String = usernameUiTextField.text ?? ""
         let password: String = passwordUiTextField.text ?? ""
+        
         
         do{
             if !checkIsValidUsername(usenrname) {
@@ -34,6 +37,7 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
       
             if logIn.result {
                 segueToScreen(segueIdentifier: "segueToFriends")
+                // self.dismiss(animated: true) { }
             }
           
           } catch {

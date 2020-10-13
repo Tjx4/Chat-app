@@ -113,7 +113,7 @@
                         <outlet property="errorUiLabel" destination="A6j-Jt-JrX" id="lQy-k6-dV6"/>
                         <outlet property="passwordUiTextField" destination="IpT-DL-iKg" id="DMO-Ja-WsY"/>
                         <outlet property="usernameUiTextField" destination="fY6-3t-U2q" id="tjX-nL-NoJ"/>
-                        <segue destination="UGv-jJ-vpk" kind="show" identifier="segueToFriends" id="Xkr-sR-K1E"/>
+                        <segue destination="UGv-jJ-vpk" kind="presentation" identifier="segueToFriends" id="Xkr-sR-K1E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -157,14 +157,27 @@
             </objects>
             <point key="canvasLocation" x="2079.7101449275365" y="129.91071428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="5aQ-QS-hHj">
             <objects>
-                <viewController id="kYR-K5-EXA" sceneMemberID="viewController">
+                <viewController id="kYR-K5-EXA" customClass="DetailsViewController" customModule="Chat_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="imS-z4-UK4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="2Jw-Fr-pGL" customClass="RoundedUIImageView" customModule="Chat_App" customModuleProvider="target">
+                                <rect key="frame" x="167" y="87" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Hit-q6-qhs"/>
+                                    <constraint firstAttribute="width" constant="80" id="w5Z-4U-ABW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Jw-Fr-pGL" firstAttribute="top" secondItem="DPB-bS-mca" secondAttribute="top" constant="31" id="CKG-xh-3Yx"/>
+                            <constraint firstItem="2Jw-Fr-pGL" firstAttribute="centerX" secondItem="imS-z4-UK4" secondAttribute="centerX" id="fkO-45-v9d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DPB-bS-mca"/>
                     </view>
                     <navigationItem key="navigationItem" id="hjw-0n-cdf"/>
@@ -193,5 +206,6 @@
     </scenes>
     <resources>
         <image name="logo" width="75" height="75"/>
+        <image name="user_icon" width="60" height="60"/>
     </resources>
 </document>

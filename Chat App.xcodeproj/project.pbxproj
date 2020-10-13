@@ -26,6 +26,8 @@
 		FC88ADC62535AFFD0066B32A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC52535AFFD0066B32A /* Friend.swift */; };
 		FC88ADC82535C1D50066B32A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC72535C1D50066B32A /* StringExtension.swift */; };
 		FC88ADCA2535CC560066B32A /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC92535CC560066B32A /* UIViewExtensions.swift */; };
+		FC88ADCE2535D5C20066B32A /* RoundedUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADCD2535D5C10066B32A /* RoundedUIImageView.swift */; };
+		FC88ADD12535D8FA0066B32A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADD02535D8FA0066B32A /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		FC88ADC52535AFFD0066B32A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		FC88ADC72535C1D50066B32A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		FC88ADC92535CC560066B32A /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		FC88ADCD2535D5C10066B32A /* RoundedUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIImageView.swift; sourceTree = "<group>"; };
+		FC88ADD02535D8FA0066B32A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			children = (
 				FC4DFFA0253364C6008297E2 /* ChatUITextField.swift */,
 				FC4DFFA5253376BE008297E2 /* UIRoundedBlueButton.swift */,
+				FC88ADCD2535D5C10066B32A /* RoundedUIImageView.swift */,
 			);
 			path = customControls;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 		FC7A3AA025318C3E003AA935 /* features */ = {
 			isa = PBXGroup;
 			children = (
+				FC88ADCF2535D8DA0066B32A /* details */,
 				FC7A3AA625319653003AA935 /* friends */,
 				FC7A3AA125318C45003AA935 /* login */,
 			);
@@ -176,6 +182,14 @@
 				FC88ADC32535A5BA0066B32A /* Networerror.swift */,
 			);
 			path = enums;
+			sourceTree = "<group>";
+		};
+		FC88ADCF2535D8DA0066B32A /* details */ = {
+			isa = PBXGroup;
+			children = (
+				FC88ADD02535D8FA0066B32A /* DetailsViewController.swift */,
+			);
+			path = details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +274,11 @@
 				FC88ADC42535A5BA0066B32A /* Networerror.swift in Sources */,
 				FC4DFFA8253383E0008297E2 /* NotificationHelper.swift in Sources */,
 				FC88ADCA2535CC560066B32A /* UIViewExtensions.swift in Sources */,
+				FC88ADD12535D8FA0066B32A /* DetailsViewController.swift in Sources */,
 				FC4DFFA6253376BE008297E2 /* UIRoundedBlueButton.swift in Sources */,
 				FC7A3A8F25318AD7003AA935 /* SceneDelegate.swift in Sources */,
 				FC88ADBE2535995F0066B32A /* Login.swift in Sources */,
+				FC88ADCE2535D5C20066B32A /* RoundedUIImageView.swift in Sources */,
 				FC4DFFA1253364C6008297E2 /* ChatUITextField.swift in Sources */,
 				FC88ADC12535A24F0066B32A /* Constants.swift in Sources */,
 			);
