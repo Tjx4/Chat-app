@@ -1,5 +1,8 @@
 
 
 struct Login: Codable {
-    var isSuccesful: Bool = false
+    var result: Bool = false
+    var guid: String? = nil
+    var firstName: String? = nil
+    var lastName: String? = nil
 }
