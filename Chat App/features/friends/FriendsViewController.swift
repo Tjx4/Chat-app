@@ -1,3 +1,4 @@
+
 import UIKit
 
 class FriendsViewController : UIViewController {
@@ -7,6 +8,8 @@ class FriendsViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myFriendsTableView.register(FriendTableViewCell.nib(), forCellReuseIdentifier: FriendTableViewCell.identifier)
         myFriendsTableView.delegate = self as! UITableViewDelegate
         myFriendsTableView.dataSource = self as! UITableViewDataSource
         
@@ -90,10 +93,11 @@ extension FriendsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = friends[indexPath.row].firstName
-        return cell
+            let friendTableViewCell = tableView.dequeueReusableCell(withIdentifier: FriendTableViewCell.identifier, for: indexPath) as! FriendTableViewCell
+            
+            friendTableViewCell.config(with: friends[indexPath.row].alias ?? "", imageUrl: friends[indexPath.row].imageURL ?? "")
+            
+             return friendTableViewCell
     }
     
 }
