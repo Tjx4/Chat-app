@@ -29,6 +29,7 @@
 		FC88ADCE2535D5C20066B32A /* RoundedUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADCD2535D5C10066B32A /* RoundedUIImageView.swift */; };
 		FC88ADD12535D8FA0066B32A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADD02535D8FA0066B32A /* DetailsViewController.swift */; };
 		FC88ADD32535E08C0066B32A /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADD22535E08C0066B32A /* SpinnerViewController.swift */; };
+		FC88ADD52535E7240066B32A /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADD42535E7240066B32A /* UIImageViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		FC88ADCD2535D5C10066B32A /* RoundedUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIImageView.swift; sourceTree = "<group>"; };
 		FC88ADD02535D8FA0066B32A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FC88ADD22535E08C0066B32A /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		FC88ADD42535E7240066B32A /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				FC4DFFA325336935008297E2 /* UIViewController.swift */,
 				FC88ADC72535C1D50066B32A /* StringExtension.swift */,
 				FC88ADC92535CC560066B32A /* UIViewExtensions.swift */,
+				FC88ADD42535E7240066B32A /* UIImageViewExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				FC88ADBE2535995F0066B32A /* Login.swift in Sources */,
 				FC88ADCE2535D5C20066B32A /* RoundedUIImageView.swift in Sources */,
 				FC4DFFA1253364C6008297E2 /* ChatUITextField.swift in Sources */,
+				FC88ADD52535E7240066B32A /* UIImageViewExtensions.swift in Sources */,
 				FC88ADC12535A24F0066B32A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

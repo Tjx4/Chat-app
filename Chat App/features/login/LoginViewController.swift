@@ -6,7 +6,6 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     @IBOutlet weak var errorUiLabel: UILabel!
     @IBOutlet weak var createAccountUILabel: UILabel!
     
-    
     var errorMessage: String?
     
     override func viewDidLoad() {
@@ -32,7 +31,6 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     @IBAction func onLoginClicked(_ sender: Any) {
          UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 
-        showLoading()
         checkAndLogin()
     }
     
@@ -55,7 +53,6 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
       
             let logIn = try logInUser(usenrname, password)
              
-            hideLoading()
       
             if logIn.result {
                 segueToScreen(segueIdentifier: "segueToFriends")
@@ -132,6 +129,15 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     func checkIsValidPassword(_ password: String?) -> Bool {
         return password?.isValidPassword() ?? false
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     let spinner: SpinnerViewController  = SpinnerViewController()
       

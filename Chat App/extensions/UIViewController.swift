@@ -1,7 +1,6 @@
 
 import UIKit
 
-
 extension UIViewController {
 
     private func segueToViewController(segueIdentifier: String){
