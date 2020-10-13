@@ -14,7 +14,6 @@
 		FC4DFFA8253383E0008297E2 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4DFFA7253383E0008297E2 /* NotificationHelper.swift */; };
 		FC7A3A8D25318AD7003AA935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3A8C25318AD7003AA935 /* AppDelegate.swift */; };
 		FC7A3A8F25318AD7003AA935 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3A8E25318AD7003AA935 /* SceneDelegate.swift */; };
-		FC7A3A9125318AD7003AA935 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7A3A9025318AD7003AA935 /* ViewController.swift */; };
 		FC7A3A9425318AD7003AA935 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC7A3A9225318AD7003AA935 /* Main.storyboard */; };
 		FC7A3A9625318AD8003AA935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7A3A9525318AD8003AA935 /* Assets.xcassets */; };
 		FC7A3A9925318AD8003AA935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC7A3A9725318AD8003AA935 /* LaunchScreen.storyboard */; };
@@ -32,6 +31,7 @@
 		FC88ADD52535E7240066B32A /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADD42535E7240066B32A /* UIImageViewExtensions.swift */; };
 		FCF7998625361B6700252055 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7998425361B6700252055 /* FriendTableViewCell.swift */; };
 		FCF7998725361B6700252055 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF7998525361B6700252055 /* FriendTableViewCell.xib */; };
+		FCF7998B253636FA00252055 /* FriendsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7998A253636FA00252055 /* FriendsNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		FC7A3A8925318AD7003AA935 /* Chat App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7A3A8C25318AD7003AA935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC7A3A8E25318AD7003AA935 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC7A3A9025318AD7003AA935 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC7A3A9325318AD7003AA935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC7A3A9525318AD8003AA935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC7A3A9825318AD8003AA935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		FC88ADD42535E7240066B32A /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		FCF7998425361B6700252055 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		FCF7998525361B6700252055 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		FCF7998A253636FA00252055 /* FriendsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,6 @@
 				FC7A3AA025318C3E003AA935 /* features */,
 				FC7A3A8C25318AD7003AA935 /* AppDelegate.swift */,
 				FC7A3A8E25318AD7003AA935 /* SceneDelegate.swift */,
-				FC7A3A9025318AD7003AA935 /* ViewController.swift */,
 				FC7A3A9225318AD7003AA935 /* Main.storyboard */,
 				FC7A3A9525318AD8003AA935 /* Assets.xcassets */,
 				FC7A3A9725318AD8003AA935 /* LaunchScreen.storyboard */,
@@ -166,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7A3AA42531963E003AA935 /* FriendsViewController.swift */,
+				FCF7998A253636FA00252055 /* FriendsNavigationController.swift */,
 			);
 			path = friends;
 			sourceTree = "<group>";
@@ -289,7 +289,6 @@
 				FC88ADC82535C1D50066B32A /* StringExtension.swift in Sources */,
 				FC4DFFA425336935008297E2 /* UIViewController.swift in Sources */,
 				FC7A3AA52531963E003AA935 /* FriendsViewController.swift in Sources */,
-				FC7A3A9125318AD7003AA935 /* ViewController.swift in Sources */,
 				FCF7998625361B6700252055 /* FriendTableViewCell.swift in Sources */,
 				FC88ADD32535E08C0066B32A /* SpinnerViewController.swift in Sources */,
 				FC7A3A8D25318AD7003AA935 /* AppDelegate.swift in Sources */,
@@ -302,6 +301,7 @@
 				FC7A3A8F25318AD7003AA935 /* SceneDelegate.swift in Sources */,
 				FC88ADBE2535995F0066B32A /* Login.swift in Sources */,
 				FC88ADCE2535D5C20066B32A /* RoundedUIImageView.swift in Sources */,
+				FCF7998B253636FA00252055 /* FriendsNavigationController.swift in Sources */,
 				FC4DFFA1253364C6008297E2 /* ChatUITextField.swift in Sources */,
 				FC88ADD52535E7240066B32A /* UIImageViewExtensions.swift in Sources */,
 				FC88ADC12535A24F0066B32A /* Constants.swift in Sources */,

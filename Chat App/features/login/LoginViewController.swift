@@ -6,7 +6,7 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     @IBOutlet weak var errorUiLabel: UILabel!
     @IBOutlet weak var createAccountUILabel: UILabel!
     
-    var errorMessage: String?
+    var login: Login?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +51,10 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
                 return
             }
       
-            let logIn = try logInUser(usenrname, password)
+            login = try logInUser(usenrname, password)
       
-            if logIn.result {
+            if login?.result ?? false {
                 segueToScreen(segueIdentifier: "segueToFriends")
-                // self.dismiss(animated: true) { }
             }
           
           } catch {
@@ -65,7 +64,6 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     
     fileprivate func logInUser(_ username: String, _ password: String) throws -> Login {
                let semaphore = DispatchSemaphore(value: 0)
-        
 /*
             let semaphore = DispatchSemaphore(value: 0)
             
@@ -116,9 +114,18 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
       _ = semaphore.wait(timeout: .distantFuture)
 */
         var login = Login()
+        login.firstName = "Jon"
         login.result = true
         
         return login
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToFriends" {
+            let friendsNavigationController = segue.destination as! FriendsNavigationController
+            let friendsViewController = friendsNavigationController
+            friendsViewController.loginResponse = login
+        }
     }
 
     func checkIsValidUsername(_ username: String?) -> Bool {
@@ -131,13 +138,7 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     
     
     
-    
-    
-    
-    
-    
-    
-    
+    //Base
     let spinner: SpinnerViewController  = SpinnerViewController()
       
     fileprivate func showLoading() {

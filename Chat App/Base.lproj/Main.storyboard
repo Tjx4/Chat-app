@@ -16,20 +16,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jXa-co-ikf">
-                                <rect key="frame" x="167" y="54" width="80" height="80"/>
+                                <rect key="frame" x="167" y="74" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="qJ4-oa-vd6"/>
                                     <constraint firstAttribute="height" constant="80" id="usW-dV-oYJ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGP-7m-Sh9">
-                                <rect key="frame" x="132.5" y="144" width="149" height="46"/>
+                                <rect key="frame" x="132.5" y="164" width="149" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-DL-iKg" customClass="ChatUITextField" customModule="Chat_App" customModuleProvider="target">
-                                <rect key="frame" x="40" y="290" width="334" height="50"/>
+                                <rect key="frame" x="40" y="310" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Klq-oG-W2P"/>
                                 </constraints>
@@ -37,7 +37,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-7P-jzU" customClass="UIRoundedBlueButton" customModule="Chat_App" customModuleProvider="target">
-                                <rect key="frame" x="40" y="401" width="334" height="50"/>
+                                <rect key="frame" x="40" y="421" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="iSe-2i-4iJ"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-3t-U2q" customClass="ChatUITextField" customModule="Chat_App" customModuleProvider="target">
-                                <rect key="frame" x="40" y="220" width="334" height="50"/>
+                                <rect key="frame" x="40" y="240" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="s4T-O6-cWc"/>
                                 </constraints>
@@ -61,19 +61,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGO-Qm-QA6">
-                                <rect key="frame" x="245.5" y="360" width="128.5" height="21"/>
+                                <rect key="frame" x="245.5" y="380" width="128.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5S2-bB-1Hf">
-                                <rect key="frame" x="40" y="581.5" width="334" height="21"/>
+                                <rect key="frame" x="40" y="601.5" width="334" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6j-Jt-JrX">
-                                <rect key="frame" x="40" y="471" width="334" height="20.5"/>
+                                <rect key="frame" x="40" y="491" width="334" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="Y7K-Nc-g4R"/>
                                 </constraints>
@@ -90,7 +90,7 @@
                             <constraint firstItem="5S2-bB-1Hf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="7t2-gq-mAP"/>
                             <constraint firstItem="oGP-7m-Sh9" firstAttribute="top" secondItem="jXa-co-ikf" secondAttribute="bottom" constant="10" id="EI2-xu-br5"/>
                             <constraint firstItem="A6j-Jt-JrX" firstAttribute="top" secondItem="z2u-7P-jzU" secondAttribute="bottom" constant="20" id="GmA-fn-3ua"/>
-                            <constraint firstItem="jXa-co-ikf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="GmG-yR-qdH"/>
+                            <constraint firstItem="jXa-co-ikf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="GmG-yR-qdH"/>
                             <constraint firstItem="IpT-DL-iKg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="InV-1X-O1q"/>
                             <constraint firstItem="5S2-bB-1Hf" firstAttribute="top" secondItem="A6j-Jt-JrX" secondAttribute="bottom" constant="90" id="Na1-8G-NB5"/>
                             <constraint firstItem="jXa-co-ikf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VGw-Sv-YWm"/>
@@ -248,10 +248,10 @@
             </objects>
             <point key="canvasLocation" x="2976.811594202899" y="129.91071428571428"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Friends Navigation Controller-->
         <scene sceneID="JUC-Tb-Y0B">
             <objects>
-                <navigationController id="UGv-jJ-vpk" sceneMemberID="viewController">
+                <navigationController id="UGv-jJ-vpk" customClass="FriendsNavigationController" customModule="Chat_App" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KXl-vJ-akc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hqx-0a-Vos">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
