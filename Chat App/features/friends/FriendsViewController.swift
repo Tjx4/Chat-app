@@ -3,11 +3,15 @@ import UIKit
 
 class FriendsViewController : UIViewController {
     
+    @IBOutlet weak var friendsNavigationBar: UINavigationItem!
     @IBOutlet weak var myFriendsTableView: UITableView!
     var friends: [Friend]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // let logo = UIBarButtonItem(image: UIImage (named: "logo.png"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        //self.friendsNavigationBar.leftBarButtonItem = logo
         
         myFriendsTableView.register(FriendTableViewCell.nib(), forCellReuseIdentifier: FriendTableViewCell.identifier)
         myFriendsTableView.delegate = self as! UITableViewDelegate

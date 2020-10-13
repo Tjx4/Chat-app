@@ -52,7 +52,6 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
             }
       
             let logIn = try logInUser(usenrname, password)
-             
       
             if logIn.result {
                 segueToScreen(segueIdentifier: "segueToFriends")
