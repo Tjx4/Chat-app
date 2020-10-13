@@ -23,6 +23,7 @@
 		FC88ADBE2535995F0066B32A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADBD2535995F0066B32A /* Login.swift */; };
 		FC88ADC12535A24F0066B32A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC02535A24F0066B32A /* Constants.swift */; };
 		FC88ADC42535A5BA0066B32A /* Networerror.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC32535A5BA0066B32A /* Networerror.swift */; };
+		FC88ADC62535AFFD0066B32A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADC52535AFFD0066B32A /* Friend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FC88ADBD2535995F0066B32A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		FC88ADC02535A24F0066B32A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FC88ADC32535A5BA0066B32A /* Networerror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networerror.swift; sourceTree = "<group>"; };
+		FC88ADC52535AFFD0066B32A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				FC88ADBD2535995F0066B32A /* Login.swift */,
+				FC88ADC52535AFFD0066B32A /* Friend.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7A3AA325318C6B003AA935 /* LoginViewController.swift in Sources */,
+				FC88ADC62535AFFD0066B32A /* Friend.swift in Sources */,
 				FC4DFFA425336935008297E2 /* UIViewController.swift in Sources */,
 				FC7A3AA52531963E003AA935 /* FriendsViewController.swift in Sources */,
 				FC7A3A9125318AD7003AA935 /* ViewController.swift in Sources */,

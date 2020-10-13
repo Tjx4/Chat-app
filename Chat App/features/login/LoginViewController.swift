@@ -13,8 +13,8 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     func checkAndLogin() {
         let logIn = Login()
 
-        let usenrname = usernameUiTextField.text
-        let password = passwordUiTextField.text
+        let usenrname: String = usernameUiTextField.text ?? ""
+        let password: String = passwordUiTextField.text ??  ""
         
         do{
             let logIn = try logInUser(usenrname, password)
