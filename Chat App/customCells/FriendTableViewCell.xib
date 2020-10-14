@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLJ-hT-a6h">
-                        <rect key="frame" x="75" y="14" width="484" height="21"/>
+                        <rect key="frame" x="75" y="14" width="414" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,10 +38,11 @@
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-M6-vLH">
-                        <rect key="frame" x="514.5" y="14" width="53.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-M6-vLH">
+                        <rect key="frame" x="498" y="14" width="70" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="f5L-m3-M2J"/>
+                            <constraint firstAttribute="width" constant="70" id="umk-GX-PG9"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -49,7 +50,7 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="MLJ-hT-a6h" secondAttribute="trailing" constant="20" id="6TB-MW-ZtN"/>
+                    <constraint firstItem="bWg-M6-vLH" firstAttribute="leading" secondItem="MLJ-hT-a6h" secondAttribute="trailing" constant="9" id="6TB-MW-ZtN"/>
                     <constraint firstItem="bWg-M6-vLH" firstAttribute="top" secondItem="MLJ-hT-a6h" secondAttribute="top" id="Gw3-NA-tl2"/>
                     <constraint firstItem="dNy-b2-fbG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="NhZ-xR-ZCu"/>
                     <constraint firstItem="dNy-b2-fbG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UNW-hf-RWb"/>

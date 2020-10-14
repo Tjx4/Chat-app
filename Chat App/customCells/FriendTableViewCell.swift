@@ -19,7 +19,7 @@ class FriendTableViewCell: UITableViewCell {
         friendProfpic.loadImageFromUrl(imageUrl ?? "")
         
         let lastSeen = lastSeen ?? ""
-        let spl = (lastSeen.isEmpty) ? status ?? "" : "\(status ?? "") \(lastSeen.split(separator: " ")[0])"
+        let spl = (lastSeen.isEmpty) ? status ?? "" : "\(lastSeen.split(separator: " ")[0])"
         lastSeenUILabel.text = "\(spl)"
     }
 
