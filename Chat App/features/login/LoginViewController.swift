@@ -61,9 +61,7 @@ class LoginViewController: BaseViewController, CAAnimationDelegate {
             }
       
             showLoading()
-            
-print("11 = username:  \(usenrname) password:  \(password)")
-            
+           
             login = try logInUser(usenrname, password)
             
             hideLoading()
@@ -83,14 +81,10 @@ print("11 = username:  \(usenrname) password:  \(password)")
     
     fileprivate func logInUser(_ username: String, _ password: String) throws -> Login {
         let parameters: [String: Any] = [
-            
-                    "username" : username,
-                    "password" : password
-            
+            "username" : username,
+            "password" : password
         ]
         
-        print(" username:  \(parameters["username"]) password:  \(parameters["password"])")
-
         let Url = String(format: HOST+LOGIN_USER)
         guard let serviceUrl = URL(string: Url) else { return Login() }
 
