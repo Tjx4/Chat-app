@@ -16,10 +16,10 @@ class DetailsViewController : UIViewController {
         super.viewDidLoad()
         navBarTitle.title = friend.alias
         
-        nameUILabel.text = "\(friend.firstName!) \(friend.lastName!)"
+        nameUILabel.text = "\(friend.firstName!) \(friend.lastName ?? "")"
         dobUILabel.text = friend.dateOfBirth
         statusUILabel.text = friend.status
-        lastSeenUILabel.text = "last seen on \(friend.lastSeen!)"
+        lastSeenUILabel.text = "last seen on \(friend.lastSeen ?? "")"
         userPicUIImageView.loadImageFromUrl(friend.imageURL ?? "")
     }
 }
