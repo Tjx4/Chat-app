@@ -21,5 +21,6 @@ class DetailsViewController : UIViewController {
         statusUILabel.text = friend.status
         lastSeenUILabel.text = "last seen on \(friend.lastSeen ?? "")"
         userPicUIImageView.loadImageFromUrl(friend.imageURL ?? "")
+        lastSeenUILabel.isHidden = friend.lastSeen == nil
     }
 }

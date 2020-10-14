@@ -121,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="-51" y="130"/>
         </scene>
-        <!--Chat app-->
+        <!--Friends-->
         <scene sceneID="pFL-IS-0kv">
             <objects>
                 <viewController id="Y2e-2b-HeC" customClass="FriendsViewController" customModule="Chat_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="khU-CW-SMb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat app" id="tas-Dl-xw2">
+                    <navigationItem key="navigationItem" title="Friends" id="tas-Dl-xw2">
                         <barButtonItem key="leftBarButtonItem" title="Chat app" width="90" style="plain" id="17N-6a-FaD">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         </barButtonItem>
@@ -204,7 +204,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last seen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enh-Qx-hre">
-                                <rect key="frame" x="40" y="384" width="334" height="16"/>
+                                <rect key="frame" x="40" y="324" width="334" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -221,13 +221,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c61-Sf-YEQ" userLabel="Born on">
+                                <rect key="frame" x="40" y="284" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DPB-bS-mca" firstAttribute="trailing" secondItem="yQa-D6-4dz" secondAttribute="trailing" constant="40" id="7bw-UM-bY8"/>
                             <constraint firstItem="2Jw-Fr-pGL" firstAttribute="top" secondItem="DPB-bS-mca" secondAttribute="top" constant="31" id="CKG-xh-3Yx"/>
                             <constraint firstItem="c2q-y9-OJU" firstAttribute="leading" secondItem="DPB-bS-mca" secondAttribute="leading" constant="40" id="ErR-n5-BYb"/>
-                            <constraint firstItem="Enh-Qx-hre" firstAttribute="top" secondItem="yQa-D6-4dz" secondAttribute="bottom" constant="80" id="FuH-fB-7iL"/>
+                            <constraint firstItem="Enh-Qx-hre" firstAttribute="top" secondItem="yQa-D6-4dz" secondAttribute="bottom" constant="20" id="FuH-fB-7iL"/>
+                            <constraint firstItem="c61-Sf-YEQ" firstAttribute="top" secondItem="c2q-y9-OJU" secondAttribute="bottom" constant="10" id="Mif-JY-Ltt"/>
                             <constraint firstItem="DPB-bS-mca" firstAttribute="trailing" secondItem="tr7-hh-8MJ" secondAttribute="trailing" constant="40" id="QGM-pc-Oos"/>
                             <constraint firstItem="Enh-Qx-hre" firstAttribute="leading" secondItem="DPB-bS-mca" secondAttribute="leading" constant="40" id="VPj-WQ-j2G"/>
                             <constraint firstItem="tr7-hh-8MJ" firstAttribute="leading" secondItem="2Jw-Fr-pGL" secondAttribute="leading" id="dZH-ns-BXJ"/>
@@ -237,6 +244,7 @@
                             <constraint firstItem="DPB-bS-mca" firstAttribute="trailing" secondItem="Enh-Qx-hre" secondAttribute="trailing" constant="40" id="gZB-7r-lCB"/>
                             <constraint firstItem="OBS-9h-rQb" firstAttribute="leading" secondItem="DPB-bS-mca" secondAttribute="leading" constant="40" id="mkM-Cc-oPd"/>
                             <constraint firstItem="jXK-Oz-Uhl" firstAttribute="top" secondItem="tr7-hh-8MJ" secondAttribute="bottom" constant="10" id="neo-Xi-1IQ"/>
+                            <constraint firstItem="c61-Sf-YEQ" firstAttribute="leading" secondItem="DPB-bS-mca" secondAttribute="leading" constant="40" id="ofK-p4-VNd"/>
                             <constraint firstItem="yQa-D6-4dz" firstAttribute="top" secondItem="jXK-Oz-Uhl" secondAttribute="bottom" constant="10" id="sH4-dq-WpH"/>
                             <constraint firstItem="tr7-hh-8MJ" firstAttribute="top" secondItem="2Jw-Fr-pGL" secondAttribute="bottom" constant="20" id="toF-Ub-OUw"/>
                             <constraint firstItem="DPB-bS-mca" firstAttribute="trailing" secondItem="jXK-Oz-Uhl" secondAttribute="trailing" constant="40" id="uuq-Sl-DMd"/>
