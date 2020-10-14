@@ -60,7 +60,11 @@ class LoginViewController: BaseViewController, CAAnimationDelegate {
                 return
             }
       
+            showLoading()
+            
             login = try logInUser(usenrname, password)
+            
+            hideLoading()
       
             if login?.result ?? false {
                 segueToScreen(segueIdentifier: "segueToFriends")
