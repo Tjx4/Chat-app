@@ -1,6 +1,6 @@
 import UIKit
 
-class LoginViewController: UIViewController, CAAnimationDelegate {
+class LoginViewController: BaseViewController, CAAnimationDelegate {
     @IBOutlet weak var usernameUiTextField: ChatUITextField!
     @IBOutlet weak var passwordUiTextField: ChatUITextField!
     @IBOutlet weak var errorUiLabel: UILabel!
@@ -123,8 +123,10 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
       _ = semaphore.wait(timeout: .distantFuture)
 */
         var login = Login()
-        login.firstName = "Jon"
         login.result = true
+        login.guid = "3f2504e0-4f89-11d3-9a0c-0305e82c3301"
+        login.firstName = "John"
+        login.lastName = "Appleseed"
         
         return login
     }
@@ -152,24 +154,6 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     
     func checkIsValidPassword(_ password: String?) -> Bool {
         return password?.isValidPassword() ?? false
-    }
-    
-    //Base
-    let spinner: SpinnerViewController  = SpinnerViewController()
-      
-    fileprivate func showLoading() {
-       addChild(spinner)
-       spinner.view.frame = view.frame
-       view.addSubview(spinner.view)
-       spinner.didMove(toParent: self)
-    }
-
-    fileprivate func hideLoading() {
-       DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-          self.spinner.willMove(toParent: nil)
-          self.spinner.view.removeFromSuperview()
-          self.spinner.removeFromParent()
-       }
     }
       
 }

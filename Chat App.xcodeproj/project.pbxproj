@@ -29,6 +29,8 @@
 		FC88ADD12535D8FA0066B32A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADD02535D8FA0066B32A /* DetailsViewController.swift */; };
 		FC88ADD32535E08C0066B32A /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADD22535E08C0066B32A /* SpinnerViewController.swift */; };
 		FC88ADD52535E7240066B32A /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88ADD42535E7240066B32A /* UIImageViewExtensions.swift */; };
+		FCE667162536C74E00E8A650 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE667152536C74E00E8A650 /* BaseViewController.swift */; };
+		FCE667182536CCE400E8A650 /* FriendsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE667172536CCE400E8A650 /* FriendsResponse.swift */; };
 		FCF7998625361B6700252055 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7998425361B6700252055 /* FriendTableViewCell.swift */; };
 		FCF7998725361B6700252055 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF7998525361B6700252055 /* FriendTableViewCell.xib */; };
 		FCF7998B253636FA00252055 /* FriendsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7998A253636FA00252055 /* FriendsNavigationController.swift */; };
@@ -59,6 +61,8 @@
 		FC88ADD02535D8FA0066B32A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FC88ADD22535E08C0066B32A /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		FC88ADD42535E7240066B32A /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		FCE667152536C74E00E8A650 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FCE667172536CCE400E8A650 /* FriendsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsResponse.swift; sourceTree = "<group>"; };
 		FCF7998425361B6700252055 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		FCF7998525361B6700252055 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		FCF7998A253636FA00252055 /* FriendsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsNavigationController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				FC7A3A9525318AD8003AA935 /* Assets.xcassets */,
 				FC7A3A9725318AD8003AA935 /* LaunchScreen.storyboard */,
 				FC7A3A9A25318AD8003AA935 /* Info.plist */,
+				FCE667152536C74E00E8A650 /* BaseViewController.swift */,
 			);
 			path = "Chat App";
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			children = (
 				FC88ADBD2535995F0066B32A /* Login.swift */,
 				FC88ADC52535AFFD0066B32A /* Friend.swift */,
+				FCE667172536CCE400E8A650 /* FriendsResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 				FC4DFFA8253383E0008297E2 /* NotificationHelper.swift in Sources */,
 				FC88ADCA2535CC560066B32A /* UIViewExtensions.swift in Sources */,
 				FC88ADD12535D8FA0066B32A /* DetailsViewController.swift in Sources */,
+				FCE667182536CCE400E8A650 /* FriendsResponse.swift in Sources */,
+				FCE667162536C74E00E8A650 /* BaseViewController.swift in Sources */,
 				FC4DFFA6253376BE008297E2 /* UIRoundedBlueButton.swift in Sources */,
 				FC7A3A8F25318AD7003AA935 /* SceneDelegate.swift in Sources */,
 				FC88ADBE2535995F0066B32A /* Login.swift in Sources */,

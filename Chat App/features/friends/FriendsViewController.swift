@@ -1,7 +1,7 @@
 
 import UIKit
 
-class FriendsViewController : UIViewController {
+class FriendsViewController : BaseViewController {
     
     @IBOutlet weak var friendsNavigationBar: UINavigationItem!
     @IBOutlet weak var myFriendsTableView: UITableView!
@@ -17,53 +17,30 @@ class FriendsViewController : UIViewController {
         
         loginResponse = friendsNavigationController.loginResponse
         
-       // let logo = UIBarButtonItem(image: UIImage (named: "logo.png"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
-        //self.friendsNavigationBar.leftBarButtonItem = logo
-        
         myFriendsTableView.register(FriendTableViewCell.nib(), forCellReuseIdentifier: FriendTableViewCell.identifier)
         myFriendsTableView.delegate = self as! UITableViewDelegate
         myFriendsTableView.dataSource = self as! UITableViewDataSource
         
-        
-        
-        var friend1 = Friend()
-        friend1.firstName = "Emma"
-        friend1.lastName = "Griffin"
-        friend1.alias = "emmathechick"
-        friend1.dateOfBirth = "1970-01-01"
-        friend1.imageURL = "http://api.randomuser.me/portraits/med/women/73.jpg"
-        friend1.status = "Offline"
-        friend1.lastSeen = "2014-07-15 12:08:00"
-        
-        var friend2 = Friend()
-        friend2.firstName = "Guy"
-        friend2.lastName = "Adams"
-        friend2.alias = "thatsright_mynameisguy"
-        friend2.dateOfBirth = "1969-07-31"
-        friend2.imageURL = "http://api.randomuser.me/portraits/med/men/93.jpg"
-        friend2.status = "Online"
-        friend2.lastSeen = "2015-07-15 10:00:00"
-        
-        friends = [
-            friend1,
-            friend2
-        ]
-        
         do{
-            //friends = try getFriends(loginResponse.guid ?? "", loginResponse.firstName ?? "")
+            try fetchFriends()
             
         } catch {
-         showSingleActionUIAlert(self, "Error", "Error getting friends", "Close")
+            showSingleActionUIAlert(self, "Error", "Error getting friends", "try again",  leftActionHandler:{ (action) -> Void in
+                self.hideLoading()
+            })
         }
 
     }
     
-    @IBAction func onLogoutClicked(_ sender: Any) {
-          segueToScreen(segueIdentifier: "segueToLogin")
+    fileprivate func fetchFriends() throws {
+        showLoading()
+        let response = try getFriends(loginResponse.guid ?? "", loginResponse.firstName ?? "")
+        friends = response.friends
+        hideLoading()
     }
     
-     fileprivate func getFriends(_ uniqueId: String, _ name: String) throws -> [Friend] {
-         let urlString = HOST+""+GET_FRIENDS
+     fileprivate func getFriends(_ uniqueId: String, _ name: String) throws -> FriendsResponse {
+         let urlString = HOST+""+GET_FRIENDS+"?name="+name+";uniqueID="+uniqueId
          print(urlString)
                  
          guard let url = URL(string: urlString) else {
@@ -94,7 +71,7 @@ class FriendsViewController : UIViewController {
              throw Networerror.generic
          }
          
-         return try JSONDecoder().decode([Friend].self,
+         return try JSONDecoder().decode(FriendsResponse.self,
          from: data!)
      }
     
@@ -104,6 +81,10 @@ class FriendsViewController : UIViewController {
               detailsViewController.friend =  friends![selectedIndex]
           }
       }
+    
+    @IBAction func onLogoutClicked(_ sender: Any) {
+          segueToScreen(segueIdentifier: "segueToLogin")
+    }
     
 }
 
