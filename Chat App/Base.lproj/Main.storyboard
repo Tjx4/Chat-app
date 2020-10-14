@@ -121,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="-51" y="130"/>
         </scene>
-        <!--Friends-->
+        <!--Chat app-->
         <scene sceneID="pFL-IS-0kv">
             <objects>
                 <viewController id="Y2e-2b-HeC" customClass="FriendsViewController" customModule="Chat_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,7 +148,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="khU-CW-SMb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Friends" id="tas-Dl-xw2">
+                    <navigationItem key="navigationItem" title="Chat app" id="tas-Dl-xw2">
+                        <barButtonItem key="leftBarButtonItem" title="Friends" width="90" id="17N-6a-FaD">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="E0Z-Om-pfx">
                             <connections>
                                 <action selector="onLogoutClicked:" destination="Y2e-2b-HeC" id="Fkl-38-bf2"/>
