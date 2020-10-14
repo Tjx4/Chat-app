@@ -49,7 +49,7 @@ class FriendsViewController : BaseViewController {
     }
     
     func showErrorAndTryAgain(){
-        showSingleActionUIAlert(self, "Error", "Error getting friends", "try again",  leftActionHandler:{ (action) -> Void in
+        showSingleActionUIAlert(self, "Error", "Error getting friends", "Try again",  leftActionHandler:{ (action) -> Void in
                        self.fetchFriends()
                    })
     }
