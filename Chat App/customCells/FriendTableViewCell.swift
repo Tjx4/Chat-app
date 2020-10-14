@@ -13,18 +13,18 @@ class FriendTableViewCell: UITableViewCell {
         return UINib(nibName: "FriendTableViewCell", bundle: nil)
     }
     
-    public func config(with name: String?, imageUrl: String?, lastSeen: String?, alias: String?){
+    public func config(with name: String?, imageUrl: String?, status: String?, lastSeen: String?, alias: String?){
         friendUILabel.text = name ?? ""
-        aliasUILabel.text = alias ?? ""
+        aliasUILabel.text = alias == nil || alias?.isEmpty ?? true ?  "" : "@\(alias!)"
         friendProfpic.loadImageFromUrl(imageUrl ?? "")
-        var spl = lastSeen?.split(separator: " ")[1] ?? ""
+        
+        let lastSeen = lastSeen ?? ""
+        let spl = (lastSeen.isEmpty) ? status ?? "" : "\(status ?? "") \(lastSeen.split(separator: " ")[1])"
         lastSeenUILabel.text = "\(spl)"
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-      
-       // friendProfpic.loadImageFromUrl(friends[indexPath.row].imageURL ?? "")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

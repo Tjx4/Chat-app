@@ -21,22 +21,34 @@ class FriendsViewController : BaseViewController {
         myFriendsTableView.delegate = self as! UITableViewDelegate
         myFriendsTableView.dataSource = self as! UITableViewDataSource
         
-        do{
-            try fetchFriends()
-            
-        } catch {
-            showSingleActionUIAlert(self, "Error", "Error getting friends", "try again",  leftActionHandler:{ (action) -> Void in
-                self.hideLoading()
-            })
-        }
-
+        fetchFriends()
     }
     
-    fileprivate func fetchFriends() throws {
-        showLoading()
-        let response = try getFriends(loginResponse.guid ?? "", loginResponse.firstName ?? "")
-        friends = response.friends
-        hideLoading()
+    fileprivate func fetchFriends()  {
+        do{
+            showLoading()
+            
+            let response = try getFriends(loginResponse.guid ?? "", loginResponse.firstName ?? "")
+            
+            hideLoading()
+            
+            if response.result ?? false {
+                friends = response.friends
+            }
+            else{
+                showErrorAndTryAgain()
+            }
+            
+        } catch {
+            self.hideLoading()
+            showErrorAndTryAgain()
+        }
+    }
+    
+    func showErrorAndTryAgain(){
+        showSingleActionUIAlert(self, "Error", "Error getting friends", "try again",  leftActionHandler:{ (action) -> Void in
+                       self.fetchFriends()
+                   })
     }
     
      fileprivate func getFriends(_ uniqueId: String, _ name: String) throws -> FriendsResponse {
@@ -112,7 +124,7 @@ extension FriendsViewController: UITableViewDataSource {
         let friend: Friend? = friends?[indexPath.row]
         
         let fullname = "\(friend!.firstName!) \(friend!.lastName!) "
-            friendTableViewCell.config(with: fullname, imageUrl: friend?.imageURL, lastSeen: friend?.lastSeen, alias: friend?.alias)
+        friendTableViewCell.config(with: fullname, imageUrl: friend?.imageURL, status: friend?.status ,lastSeen: friend?.lastSeen, alias: friend?.alias)
             
              return friendTableViewCell
     }

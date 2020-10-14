@@ -30,9 +30,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@alias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTa-TQ-Xaj">
-                        <rect key="frame" x="75" y="35" width="37" height="12"/>
+                        <rect key="frame" x="75" y="35" width="37" height="13"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="12" id="jat-7s-F1j"/>
+                            <constraint firstAttribute="height" constant="13" id="jat-7s-F1j"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
