@@ -62,6 +62,8 @@ class LoginViewController: BaseViewController, CAAnimationDelegate {
       
             showLoading()
             
+print("11 = username:  \(usenrname) password:  \(password)")
+            
             login = try logInUser(usenrname, password)
             
             hideLoading()
@@ -69,70 +71,67 @@ class LoginViewController: BaseViewController, CAAnimationDelegate {
             if login?.result ?? false {
                 segueToScreen(segueIdentifier: "segueToFriends")
             }
+            else{
+                errorUiLabel.text = "\(login?.error ?? "")"
+                errorUiLabel.blink()
+            }
           
-          } catch {
-             print("Login error", error)
-          }
+        } catch {
+            print("Login error", error)
+        }
     }
     
     fileprivate func logInUser(_ username: String, _ password: String) throws -> Login {
-               let semaphore = DispatchSemaphore(value: 0)
-/*
-            let semaphore = DispatchSemaphore(value: 0)
+        let parameters: [String: Any] = [
             
-            let Url = String(format: HOST+""+LOGIN_USER)
-            print(Url)
+                    "username" : username,
+                    "password" : password
             
-            guard let serviceUrl = URL(string: Url) else { return Login() }
+        ]
         
-            let parameters: [String: Any] = [
-                "request": [
-                        "xusercode" : username,
-                        "xpassword": password
-                ]
-            ]
-        
-            var request = URLRequest(url: serviceUrl)
-            request.httpMethod = "POST"
-            request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        
-            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
-                return JSONDecoder().decode(Login.self,
-                from: data!)
-            }
-        
-            request.httpBody = httpBody
-            request.timeoutInterval = 20
-            let session = URLSession.shared
-        
-            session.dataTask(with: request) { (data, response, error) in
-                if let response = response {
-                    print(response)
-                }
-                
-                if let data = data {
-                    do {
-                        let json = try JSONSerialization.jsonObject(with: data, options: [])
-                        print(json)
-                    } catch {
-                        print(error)
-                    }
-                }
-                
-                semaphore.signal()
-                
-            }.resume()
+        print(" username:  \(parameters["username"]) password:  \(parameters["password"])")
+
+        let Url = String(format: HOST+LOGIN_USER)
+        guard let serviceUrl = URL(string: Url) else { return Login() }
+
+        var request = URLRequest(url: serviceUrl)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            var errorLogin = Login()
+            errorLogin.error = "Unknown error"
+            return errorLogin
         }
-                
-      _ = semaphore.wait(timeout: .distantFuture)
-*/
-        var login = Login()
-        login.result = true
-        login.guid = "3f2504e0-4f89-11d3-9a0c-0305e82c3301"
-        login.firstName = "John"
-        login.lastName = "Appleseed"
-        
-        return login
+
+        request.httpBody = httpBody
+        request.timeoutInterval = 20
+
+        var data: Data?
+        var response: URLResponse?
+        var error: Error?
+
+        let semaphore = DispatchSemaphore(value: 0)
+
+        URLSession.shared.dataTask(with: request) { (d, resp, err) in
+          data = d
+          response = resp
+          error = err
+          
+          semaphore.signal()
+        }.resume()
+
+        _ = semaphore.wait(timeout: .distantFuture)
+
+        if let httpUrlResponse = response as? HTTPURLResponse, httpUrlResponse.statusCode > 200 {
+          throw Networerror.statusCode
+        }
+
+        if error != nil{
+          throw Networerror.generic
+        }
+
+        return try JSONDecoder().decode(Login.self,
+        from: data!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -142,7 +141,6 @@ class LoginViewController: BaseViewController, CAAnimationDelegate {
             friendsViewController.loginResponse = login
         }
     }
-    
     
     @objc func onForgotPasswordLabelTapped(tapGestureRecognizer: UITapGestureRecognizer){
         showSingleActionUIAlert(self, "Alert", "Action not available in demo", "Close")

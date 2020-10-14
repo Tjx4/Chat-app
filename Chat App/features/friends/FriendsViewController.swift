@@ -30,9 +30,7 @@ class FriendsViewController : BaseViewController {
     fileprivate func fetchFriends()  {
         do{
             showLoading()
-            
             let response = try getFriends(loginResponse.guid ?? "", loginResponse.firstName ?? "")
-            
             hideLoading()
             
             if response.result ?? false {
@@ -55,7 +53,7 @@ class FriendsViewController : BaseViewController {
     }
     
      fileprivate func getFriends(_ uniqueId: String, _ name: String) throws -> FriendsResponse {
-         let urlString = HOST+""+GET_FRIENDS+"?name="+name+";uniqueID="+uniqueId
+         let urlString = HOST+GET_FRIENDS+"?name="+name+";uniqueID="+uniqueId
          print(urlString)
                  
          guard let url = URL(string: urlString) else {

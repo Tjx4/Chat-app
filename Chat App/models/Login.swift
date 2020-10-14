@@ -4,4 +4,5 @@ struct Login: Codable {
     var guid: String? = nil
     var firstName: String? = nil
     var lastName: String? = nil
+    var error: String? = nil
 }
