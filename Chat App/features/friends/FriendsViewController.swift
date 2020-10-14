@@ -12,6 +12,9 @@ class FriendsViewController : BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let logo = UIImage(named: "logo_landscape.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
         
         let friendsNavigationController = self.navigationController as! FriendsNavigationController
         
