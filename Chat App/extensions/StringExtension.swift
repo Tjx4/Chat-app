@@ -6,9 +6,7 @@ extension String {
     }
     
     public func isValidPassword() -> Bool {
-        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
-       // return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
-
+        //For demo purposes
         return self.count > 1
     }
 }
