@@ -5,17 +5,17 @@ class FriendTableViewCell: UITableViewCell {
     
     static let identifier = "FriendTableViewCell"
     @IBOutlet weak var lastSeenUILabel: UILabel!
-    @IBOutlet weak var onLineUILabel: UILabel!
     @IBOutlet weak var friendUILabel: UILabel!
+    @IBOutlet weak var aliasUILabel: UILabel!
     @IBOutlet weak var  friendProfpic: RoundedUIImageView!
     
     static func nib() -> UINib{
         return UINib(nibName: "FriendTableViewCell", bundle: nil)
     }
     
-    public func config(with name: String?, imageUrl: String?, lastSeen: String?, onLine: String?){
+    public func config(with name: String?, imageUrl: String?, lastSeen: String?, alias: String?){
         friendUILabel.text = name ?? ""
-        onLineUILabel.text = onLine ?? ""
+        aliasUILabel.text = alias ?? ""
         friendProfpic.loadImageFromUrl(imageUrl ?? "")
         var spl = lastSeen?.split(separator: " ")[1] ?? ""
         lastSeenUILabel.text = "\(spl)"

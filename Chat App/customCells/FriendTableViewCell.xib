@@ -29,10 +29,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTa-TQ-Xaj">
-                        <rect key="frame" x="75" y="35" width="36.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@alias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTa-TQ-Xaj">
+                        <rect key="frame" x="75" y="35" width="37" height="12"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="jat-7s-F1j"/>
+                            <constraint firstAttribute="height" constant="12" id="jat-7s-F1j"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -66,10 +66,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="aliasUILabel" destination="DTa-TQ-Xaj" id="hXy-aO-Cuv"/>
                 <outlet property="friendProfpic" destination="dNy-b2-fbG" id="BFr-ma-c58"/>
                 <outlet property="friendUILabel" destination="MLJ-hT-a6h" id="YJ4-cb-VXA"/>
                 <outlet property="lastSeenUILabel" destination="bWg-M6-vLH" id="vZI-BH-24r"/>
-                <outlet property="onLineUILabel" destination="DTa-TQ-Xaj" id="mqO-I7-g99"/>
             </connections>
             <point key="canvasLocation" x="142.75362318840581" y="34.821428571428569"/>
         </tableViewCell>

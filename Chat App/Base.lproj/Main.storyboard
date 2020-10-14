@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="createAccountUILabel" destination="5S2-bB-1Hf" id="7Wr-Fc-EFC"/>
                         <outlet property="errorUiLabel" destination="A6j-Jt-JrX" id="lQy-k6-dV6"/>
+                        <outlet property="forgotPasswordUILabel" destination="WGO-Qm-QA6" id="NEX-2V-YB5"/>
                         <outlet property="passwordUiTextField" destination="IpT-DL-iKg" id="DMO-Ja-WsY"/>
                         <outlet property="usernameUiTextField" destination="fY6-3t-U2q" id="tjX-nL-NoJ"/>
                         <segue destination="UGv-jJ-vpk" kind="presentation" identifier="segueToFriends" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Xkr-sR-K1E"/>
@@ -118,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="-51" y="130"/>
         </scene>
         <!--Friends-->
         <scene sceneID="pFL-IS-0kv">
@@ -147,11 +148,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="khU-CW-SMb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Friends" id="tas-Dl-xw2"/>
+                    <navigationItem key="navigationItem" title="Friends" id="tas-Dl-xw2">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="E0Z-Om-pfx">
+                            <connections>
+                                <action selector="onLogoutClicked:" destination="Y2e-2b-HeC" id="Fkl-38-bf2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="friendsNavigationBar" destination="tas-Dl-xw2" id="Gjh-Io-HLQ"/>
                         <outlet property="myFriendsTableView" destination="2rr-Uh-Cr1" id="Lgh-jt-w9j"/>
                         <segue destination="kYR-K5-EXA" kind="show" identifier="detailsSegue" id="Atu-Py-V6g"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="segueToLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="eIb-2E-9Wa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvJ-na-Has" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -204,8 +212,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Born on " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2q-y9-OJU" userLabel="Born on">
-                                <rect key="frame" x="40" y="253" width="65" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Born " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2q-y9-OJU" userLabel="Born on">
+                                <rect key="frame" x="40" y="253" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -263,7 +271,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3g-GF-X9N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="130"/>
+            <point key="canvasLocation" x="991" y="130"/>
         </scene>
     </scenes>
     <resources>

@@ -4,6 +4,7 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     @IBOutlet weak var usernameUiTextField: ChatUITextField!
     @IBOutlet weak var passwordUiTextField: ChatUITextField!
     @IBOutlet weak var errorUiLabel: UILabel!
+    @IBOutlet weak var forgotPasswordUILabel: UILabel!
     @IBOutlet weak var createAccountUILabel: UILabel!
     
     var login: Login?
@@ -12,6 +13,14 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
         super.viewDidLoad()
         usernameUiTextField.delegate = self
         passwordUiTextField.delegate = self
+        
+        let createAccounTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onForgotPasswordLabelTapped(tapGestureRecognizer:)))
+            createAccountUILabel.isUserInteractionEnabled = true
+            createAccountUILabel.addGestureRecognizer(createAccounTapGestureRecognizer)
+        
+        let forgotPassTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onCreateAccountLabelTapped(tapGestureRecognizer:)))
+            forgotPasswordUILabel.isUserInteractionEnabled = true
+            forgotPasswordUILabel.addGestureRecognizer(forgotPassTapGestureRecognizer)
     }
     
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -29,7 +38,7 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     }
     
     @IBAction func onLoginClicked(_ sender: Any) {
-         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 
         checkAndLogin()
     }
@@ -127,7 +136,16 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
             friendsViewController.loginResponse = login
         }
     }
+    
+    
+    @objc func onForgotPasswordLabelTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        showSingleActionUIAlert(self, "Alert", "Action not available in demo", "Close")
+    }
 
+    @objc func onCreateAccountLabelTapped(tapGestureRecognizer: UITapGestureRecognizer){
+           showSingleActionUIAlert(self, "Alert", "Action not available in demo", "Close")
+       }
+    
     func checkIsValidUsername(_ username: String?) -> Bool {
         return username?.isValidUsername() ?? false
     }
@@ -135,8 +153,6 @@ class LoginViewController: UIViewController, CAAnimationDelegate {
     func checkIsValidPassword(_ password: String?) -> Bool {
         return password?.isValidPassword() ?? false
     }
-    
-    
     
     //Base
     let spinner: SpinnerViewController  = SpinnerViewController()

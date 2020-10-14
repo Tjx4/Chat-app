@@ -58,6 +58,10 @@ class FriendsViewController : UIViewController {
 
     }
     
+    @IBAction func onLogoutClicked(_ sender: Any) {
+          segueToScreen(segueIdentifier: "segueToLogin")
+    }
+    
      fileprivate func getFriends(_ uniqueId: String, _ name: String) throws -> [Friend] {
          let urlString = HOST+""+GET_FRIENDS
          print(urlString)
@@ -126,7 +130,8 @@ extension FriendsViewController: UITableViewDataSource {
         
         let friend: Friend? = friends?[indexPath.row]
         
-            friendTableViewCell.config(with: friend?.alias, imageUrl: friend?.imageURL, lastSeen: friend?.lastSeen, onLine: friend?.status)
+        let fullname = "\(friend!.firstName!) \(friend!.lastName!) "
+            friendTableViewCell.config(with: fullname, imageUrl: friend?.imageURL, lastSeen: friend?.lastSeen, alias: friend?.alias)
             
              return friendTableViewCell
     }
